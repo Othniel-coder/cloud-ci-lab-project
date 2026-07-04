@@ -1,0 +1,27 @@
+name : Python CI Pipeline
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Check Python Version
+      run: python --version
+
+    - name: Run Application
+      run: python app.py
+
+    - name: Run Tests
+      run: python test_app.py
+      
