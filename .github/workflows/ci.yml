@@ -16,6 +16,9 @@ jobs:
       with:
         python-version: '3.12'
 
+    - name: Display Build Message
+      run: echo "Starting Cloud CI Pipeline Build"
+
     - name: Check Python Version
       run: python --version
 
